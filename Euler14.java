@@ -1,6 +1,11 @@
+import java.util.Date;
+
 
 public class Euler14 {
 	public static void main(String [] args){
+		Date start, end;
+		start = new Date();
+		
 		int max = 0;
 		int curr = 0;
 		int num = 0;
@@ -11,20 +16,17 @@ public class Euler14 {
 				num = i;
 			}
 		}
+		end = new Date();
 		System.out.println(num);
+		System.out.println("Execution time: " + (end.getTime() - start.getTime()));
+		
 	}
 	public static int collatzCounter(long start){
 		int counter = 1;
-		System.out.print(start+"\t");
 		while(start != 1){
 			start = (start%2 == 0) ? (start/2) : ((3* start) +1);
-			//System.out.print("\t"+start);
-//			if(counter % 15 == 0){
-//				System.out.println();
-//			}
 			counter ++;
 		}
-		System.out.println(counter);
 		return counter;
 	}
 }

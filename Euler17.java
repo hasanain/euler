@@ -1,14 +1,20 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Euler17 {
 
 	public static void main(String[] args) {
+		Date start, end;
+		start = new Date();
+		
 		int count = 0;
 		for (int i = 1; i <= 1000; i++) {
 			count += numberToLetters(i).length();
-			System.out.println(numberToLetters(i));
 		}
+		end = new Date();
 		System.out.println(count);
+		System.out.println("Execution time: " + (end.getTime() - start.getTime()));
+		
 	}
 
 	public static String numberToLetters(int n) {
