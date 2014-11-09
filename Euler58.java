@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Euler58 {
@@ -6,11 +5,7 @@ public class Euler58 {
 	public static void main(String[] args) {
 		Date start, end;
 		start = new Date();
-		// start
-//		ArrayList<Integer> nums = new ArrayList<Integer>();
-//		for (int i = 1; i < 50; i++) {
-//			nums.add(i);
-//		}
+
 		int sideLength =3;
 		double ratio = spiralPrimeDiagonals(sideLength);
 		while ( ratio > 0.1d){

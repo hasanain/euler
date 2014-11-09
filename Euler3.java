@@ -30,7 +30,7 @@ public class Euler3 {
 		endTime = new Date();
 
 		System.out.println(largestPrime);
-		System.out.println("Execution time = "
+		System.out.println("Execution time : "
 				+ (endTime.getTime() - startTime.getTime()));
 	}
 

@@ -35,7 +35,7 @@ public class Euler4 {
 		
 		System.out.println("The Largest Palidrome = " + largestP);
 		
-		System.out.println("Execution time = "
+		System.out.println("Execution time : "
 				+ (end.getTime() - start.getTime()));
 
 	}

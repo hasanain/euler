@@ -29,7 +29,7 @@ public class Euler5 {
 		end = new Date();
 
 		System.out.println("The number is: " + sm);
-		System.out.println("Execution time = "
+		System.out.println("Execution time : "
 				+ (end.getTime() - start.getTime()));
 	}
 }
