@@ -7,7 +7,7 @@ public class Euler18 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner scanner = new Scanner(new File("./src/Euler18file.txt"));
-		while(scanner.hasNextInt()){
+		while(scanner.hasNextLine()){
 			System.out.println(scanner.nextInt());
 		}
 	}
