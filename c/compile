@@ -1,0 +1,5 @@
+#!/bin/bash
+#echo $1
+#echo $2
+gcc -std=gnu99 -Wall -g -o $2 $1
+rm -r "$2.dSYM"
