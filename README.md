@@ -1,4 +1,4 @@
-euler-java
+euler
 ==========
 
-Solutions for project Euler problems in java.
+Solutions for project Euler problems in java, C.
