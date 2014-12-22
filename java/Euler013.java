@@ -116,7 +116,7 @@ public class Euler013 {
     public static void main(String[]args){
         Date start, end;
         start = new Date();
-        File file = new File("./src/Euler13file");
+        File file = new File("../Euler13file");
         BigInteger integer = new BigInteger("0");
         BigInteger sum = new BigInteger("0");
         Scanner scanner = null;

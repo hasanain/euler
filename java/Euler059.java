@@ -38,7 +38,7 @@ public class Euler059 {
     public static void main(String[] args) throws IOException {
         Date start, end;
         start = new Date();
-        Scanner scanner = new Scanner(new File("./src/p059_cipher.txt"));
+        Scanner scanner = new Scanner(new File("../p059_cipher.txt"));
         String list = "";
         while (scanner.hasNext()) {
             for (String str : scanner.next().split(",")) {
