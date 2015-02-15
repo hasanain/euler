@@ -1,4 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 /*
 Project Euler Problem 67
 ========================
@@ -24,10 +28,30 @@ efficient algorithm to solve it. ;o)
 */
 
 public class Euler067 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Date start, end;
         start = new Date();
+        ArrayList<ArrayList<Integer>> pyramid2 = new ArrayList<ArrayList<Integer>>();
+        File file = new File("p067_triangle.txt");
+        Scanner scan = new Scanner(file);
 
+        while(scan.hasNextLine()){
+        	String str = scan.nextLine();
+        	ArrayList<Integer> temp = new ArrayList<Integer>();
+        	for(String s: str.split(" ")){
+        		temp.add(Integer.parseInt(s));
+        	}
+        	pyramid2.add(temp);
+        	
+        }
+        System.out.println(pyramid2.size());
+        System.out.println(pyramid2.get(pyramid2.size()-1).size());
+        for(int i = pyramid2.size() -2; i >=0; i--){
+        	for(int j = 0; j <= i; j++ ){
+        		pyramid2.get(i).set(j, pyramid2.get(i).get(j) + Math.max(pyramid2.get(i+1).get(j), pyramid2.get(i+1).get(j+1)));
+        	}
+        }
+        System.out.println(pyramid2.get(0).get(0));
         end = new Date();
         System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
     }

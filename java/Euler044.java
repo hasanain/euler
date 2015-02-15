@@ -20,8 +20,18 @@ public class Euler044 {
     public static void main(String[] args) {
         Date start, end;
         start = new Date();
-
+        
         end = new Date();
         System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
+    }
+    public static int pentagonal(int n){
+    	return n*(3*n-1)/2;
+    }
+    public static boolean isPentagonal(double p){
+    	
+    	return isInteger((1+ Math.sqrt(1+24*p))/6) ;
+    }
+    public static boolean isInteger(double p){
+    	return p == Math.floor(p);
     }
 }

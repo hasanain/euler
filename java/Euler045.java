@@ -19,8 +19,28 @@ public class Euler045 {
     public static void main(String[] args) {
         Date start, end;
         start = new Date();
-
+        for(int i = 144;;i++){
+        	int l = hexagonal(i);
+        	if(isPentagonal(l) && isTriangle(l)){
+        		System.out.println(l);
+        		break;
+        	}
+        }
         end = new Date();
         System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
     }
+    public static boolean isPentagonal(double p){
+    	
+    	return isInteger((1+ Math.sqrt(1+24*p))/6) ;
+    }
+    public static boolean isTriangle(double p){
+    	return isInteger((1+Math.sqrt(1+8*p))/2);
+    }
+    public static boolean isInteger(double p){
+    	return p == Math.floor(p);
+    }
+	public static int hexagonal(int n) {
+		return n * (2 * n - 1);
+	}
+
 }
