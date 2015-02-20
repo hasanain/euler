@@ -1,4 +1,3 @@
-import java.util.Date;
 /*
 Project Euler Problem 97
 ========================
@@ -14,12 +13,17 @@ contains 2,357,207 digits: 28433 * 2^7830457+1.
 Find the last ten digits of this prime number.
 */
 
-public class Euler097 {
-    public static void main(String[] args) {
-        Date start, end;
-        start = new Date();
+#include<stdlib.h>
+#include<stdio.h>
 
-        end = new Date();
-        System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
-    }
+int main(int argc, char* argv[]){
+	long i, j;
+	i = 28433;
+	for(j = 1; j <= 7830457; j++){
+		i *=2;
+		i %= 10000000000;
+	}
+	i++;
+	printf("%ld\n", i);
+	return 0;
 }
