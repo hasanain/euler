@@ -19,14 +19,6 @@ public class Euler097 {
     public static void main(String[] args) {
         Date start, end;
         start = new Date();
-//        String s = "28433×2^7830457+1";
-//        BigInteger j = new BigInteger("2");
-//        j = j.pow(7830457);
-//        j = j.multiply(new BigInteger("28433"));
-//        j = j.add(new BigInteger("1"));
-//        System.out.println(j.mod(new BigInteger("10000000000")));
-        
-        
         long i = 28433l;
         for(int r = 1; r <=7830457; r++){
         	i *=2;
