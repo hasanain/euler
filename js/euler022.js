@@ -1,4 +1,3 @@
-import java.util.Date;
 /*
 Project Euler Problem 22
 ========================
@@ -15,12 +14,14 @@ COLIN would obtain a score of 938 * 53 = 49714.
 What is the total of all the name scores in the file?
 */
 
-public class Euler022 {
-    public static void main(String[] args) {
-        Date start, end;
-        start = new Date();
+var fs = require('fs');
 
-        end = new Date();
-        System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
-    }
-}
+var file = fs.readFile('../p022_names.txt', 'utf8', function(err,data){
+	if(err){
+		return console.log(err);
+	}
+	console.log(file);
+	var names = [];
+	
+});
+console.log(file);

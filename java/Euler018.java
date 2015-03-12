@@ -1,4 +1,3 @@
-import java.util.Date;
 /*
 Project Euler Problem 18
 ========================
