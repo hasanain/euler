@@ -25,11 +25,11 @@ def isPrime(n):
 	if n == 1:
 		return False
 	elif n % 2 == 0 or n % 3==0:
-		return True
+		return False
 	else:
-		for i in range (5, int(sqrt(n)), 2):
+		for i in range (5, int(sqrt(n)) + 1, 2):
 			if n % i == 0:
 				return False
 		return True
 
-print factorize(600851475143)	
+print factorize(81)
