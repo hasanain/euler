@@ -22,7 +22,6 @@ for(var a = 0; a < 10000; a++){
 	}
 	
 }
-// This comment is to mess up things
 print(amicableSum);
 print(d(220));
 function d(number){
