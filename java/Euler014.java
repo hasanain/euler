@@ -30,7 +30,7 @@ public class Euler014 {
         int max = 0;
         int curr = 0;
         int num = 0;
-        for(int i = 666667; i < 1000000; i++){
+        for(int i = 500000; i < 1000000; i++){
             curr = collatzCounter(i);
             if(curr > max){
                 max = curr;

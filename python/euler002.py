@@ -13,12 +13,12 @@
 """
 
 def fibSum(n, m):
-	a, b = 0, 1
-	sum = 0
-	while b < n:
-		a , b = b, a+b
-		if b % m == 0:
-			sum += b
-	return sum
+    a, b = 0, 1
+    sum = 0
+    while b < n:
+        a , b = b, a+b
+        if b % m == 0:
+            sum += b
+    return sum
 
 print fibSum(4000000, 2)
