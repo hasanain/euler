@@ -4,3 +4,4 @@ EulerTest.java
 .project
 *.exe
 *.scm~
+.metadata/
