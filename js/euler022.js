@@ -16,12 +16,10 @@ What is the total of all the name scores in the file?
 
 var fs = require('fs');
 
-var file = fs.readFile('../p022_names.txt', 'utf8', function(err,data){
-	if(err){
-		return console.log(err);
-	}
-	console.log(file);
-	var names = [];
-	
-});
-console.log(file);
+var names = JSON.parse('[' + fs.readFileSync('../p022_names.txt', 'utf8') + ']')
+
+const greatest = names
+  .sort()
+  .map(name => name.split("").map(character => character.charCodeAt(0)).reduce((sum, value) => sum + value - 65 + 1, 0))
+  .reduce((sum, value, idx) => sum + value * (idx + 1), 0)
+console.log(greatest);
