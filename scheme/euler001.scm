@@ -1,6 +1,3 @@
-#lang scheme
-
-
 ; Project Euler Problem 1
 ; =======================
 ;
@@ -9,29 +6,15 @@
 ;
 ; Find the sum of all the multiples of 3 or 5 below 1000.
 
-(define (sum l)
-  (define (inner s l)
-    (cond
-    ((null? l) s)
-    (else (inner (+ s (car l)) (cdr l)))))
-  (inner 0 l))
-
-(define (threeOrFive? x)
-  (or (= (remainder x 3) 0) (= (remainder x 5) 0)))
-
-(define (range n)
-  (define (inner c l)
-    (cond
-      ((< c 0) l)
-      (else (inner (- c 1) (cons c l)))))
-  (inner (- n 1) '()))
-
-(define (filter f l)
-  (define (inner f l a)
-    (cond
-      ((null? l) a)
-      ((f (car l)) (inner f (cdr l) (cons (car l) a)))
-      (else (inner f (cdr l) a))))
-  (inner f l '()))
-   
-(sum (filter2 threeOrFive? (range 1000)))
+(define (problem1)
+    (define (sum-multiples-of-3-and-5 n)
+      (define(multiple-of-3-or-5? x)
+        (or (= (remainder x 3) 0) (= (remainder x 5) 0)))
+      (define (inner i s)
+        (cond 
+          ((>= i n) s)
+          ((multiple-of-3-or-5? i) (inner (+ i 1) (+ i s)))
+          (else (inner (+ i 1) s))))
+      (inner 1 0))
+    (sum-multiples-of-3-and-5 1000))
+(problem1)

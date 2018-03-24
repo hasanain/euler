@@ -1,5 +1,3 @@
-#lang scheme
-
 ; Project Euler Problem 2
 ; =======================
 ;
@@ -11,25 +9,14 @@
 ; Find the sum of all the even-valued terms in the sequence which do not
 ; exceed four million.
 
-(define (fib-list x)
-  (define (fib-inner a b)
-    (cond
-      ((> b (- x 1)) '())
-      (else (cons b (fib-inner b (+ a b))))))
-  (fib-inner 0 1))
+(define (problem2)
+  (define (sum-even-fibs-up-to n)
+    (define (even? a) (= (remainder a 2) 0))
+    (define (inner a b s)
+      (cond ((>= a n) s)
+            ((even? a) (inner b (+ a b) (+ a s)))
+            (else (inner b (+ a b) s))))
+    (inner 1 2 0))
+  (sum-even-fibs-up-to 4000000))
 
-(define (sum l)
-  (cond
-    ((null? l) 0)
-    (else (+ (car l) (sum (cdr l))))))
-
-(define (even? n)
-  (= (remainder n 2) 0))
-
-(define (filter f l)
-  (cond
-    ((null? l) '())
-    ((f (car l)) (cons (car l) (filter f (cdr l))))
-    (else (filter f (cdr l)))))
-
-(sum (filter even? (fib-list 4000000)))
+(problem2)
