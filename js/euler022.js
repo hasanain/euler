@@ -18,8 +18,8 @@ var fs = require('fs');
 
 var names = JSON.parse('[' + fs.readFileSync('../p022_names.txt', 'utf8') + ']')
 
-const greatest = names
+const total = names
   .sort()
   .map(name => name.split("").map(character => character.charCodeAt(0)).reduce((sum, value) => sum + value - 65 + 1, 0))
   .reduce((sum, value, idx) => sum + value * (idx + 1), 0)
-console.log(greatest);
+console.log(total);

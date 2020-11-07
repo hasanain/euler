@@ -14,7 +14,8 @@ var program = main();
 function main(){
 	var sum = 0, f = 0;
 	for(var i =0; (f = fib(i)) <=4000000; i++){
-		if(f % 2 == 0){
+		
+    if(f % 2 == 0){
 			sum+=f;
 		} 
 	}

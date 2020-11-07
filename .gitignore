@@ -5,3 +5,5 @@ EulerTest.java
 *.exe
 *.scm~
 .metadata/
+*.icloud
+*.pyc
