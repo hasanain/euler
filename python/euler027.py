@@ -1,5 +1,4 @@
-import java.util.Date;
-/*
+"""
 Project Euler Problem 27
 ========================
 
@@ -26,14 +25,31 @@ Considering quadratics of the form:
 Find the product of the coefficients, a and b, for the quadratic
 expression that produces the maximum number of primes for consecutive
 values of n, starting with n = 0.
-*/
+"""
+from primes import is_prime
 
-public class Euler027 {
-    public static void main(String[] args) {
-        Date start, end;
-        start = new Date();
+def f(a,b,n):
+    return (n**2) + (a * n) + b
 
-        end = new Date();
-        System.out.println("Execution Time: " + (end.getTime() -start.getTime()));
-    }
-}
+def count_seq_length(a, b):
+    n = 0
+    while True:
+        v = f(a, b, n)
+        if not is_prime(v):
+            break
+        n = n + 1
+    return n
+
+def main():
+    max_a, max_b, max_n = 0, 0, 0
+    for a in range(-999,1000):
+        for b in range(-1000, 1001):
+            n = count_seq_length(a, b)
+            if n > max_n:
+                max_n = n
+                max_a, max_b = a, b
+            print(f'{a} {b} -> {n}', end='\r')
+    print(max_a * max_b, max_n)
+
+if __name__ == '__main__':
+    main()
